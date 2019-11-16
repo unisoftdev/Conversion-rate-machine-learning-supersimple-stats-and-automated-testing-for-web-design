@@ -17,6 +17,9 @@ class MainHandler(tornado.web.RequestHandler):
             index = '<!DOCTYPE HTML><html><body><button style=color:"'+ global_variable.color +';width:100%;height:auto"></button>press me</body></html>'
                                                                       #########################           
             self.write(str(index))
+           ##########################
+            test_conversion.Write() # this just make some stats
+           ##########################
         elif str(path) == "contact-us":
 ##############################################################
           # here, we start the script to make stats and choose
