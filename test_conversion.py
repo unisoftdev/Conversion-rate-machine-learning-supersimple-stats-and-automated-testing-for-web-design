@@ -24,8 +24,16 @@ import global_variable
 def display_element(something_to_display):
     # handle this variable for a server rendering HTML   
     global_variable.color = something_to_display
+    
+def Write(_color):
+    # gets all of our data from the config file.
+    with open('con.json', 'r') as nnn:
+        config_data = json.load(nnn)
+    config_data[_color]["prices_list_visits"] =+ 1 
+    with open('con.json', 'w') as f:
+        f.write(json.dumps(config_data))    
 
-def Start():
+def Start(test_referer):
     # gets all of our data from the config file.
     with open('con.json', 'r') as nnn:
         config_data = json.load(nnn)
@@ -45,17 +53,33 @@ def Start():
         #this checks which one color is currently tested, which this data are picked up about 
         # and later tests conversion rate of 100 visitors per each design scheme
         if config_data["green"]["prices_list_visits"] < number_of_visits_per_each:
+          if test_referer > 0:
             something_to_display = config_data["green"]["color"]
             config_data["results"]["green"] =+ 1 # this counts clicks
+          else:
+            _color = 'green'
+            Write(_color)
         elif config_data["orange"]["prices_list_visits"] < number_of_visits_per_each:
+          if test_referer > 0:     
             something_to_display = config_data["orange"]["color"]
             config_data["results"]["orange"] =+ 1 # this counts clicks
+          else:
+            _color = 'orange'
+            Write(_color) 
         elif config_data["red"]["prices_list_visits"] < number_of_visits_per_each:
+          if test_referer > 0:       
             something_to_display = config_data["red"]["color"]
             config_data["results"]["red"] =+ 1 # this counts clicks
+          else:
+            _color = 'red'
+            Write(_color)            
         elif config_data["blue"]["prices_list_visits"] < number_of_visits_per_each:
+          if test_referer > 0:
             something_to_display = config_data["blue"]["blue"]
             config_data["results"]["color"] =+ 1 # this counts clicks
+          else:
+            _color = 'blue'
+            Write(_color)    
 
         #if it's the end of the test:
         else:
