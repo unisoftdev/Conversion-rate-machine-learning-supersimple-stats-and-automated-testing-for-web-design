@@ -75,7 +75,7 @@ def Start(test_referer):
             Write(_color)            
         elif config_data["blue"]["prices_list_visits"] < number_of_visits_per_each:
           if test_referer > 0:
-            something_to_display = config_data["blue"]["blue"]
+            something_to_display = config_data["blue"]["color"]
             config_data["results"]["color"] =+ 1 # this counts clicks
           else:
             _color = 'blue'
