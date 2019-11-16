@@ -16,7 +16,7 @@ class MainHandler(tornado.web.RequestHandler):
             # here, we start our script when use the variable  ------------> this variable  #
             index = '<!DOCTYPE HTML><html><body><button style=color:"'+ global_variable.color +';width:100%;height:auto"></button>press me</body></html>'
 #############################################################################################           
-            self.write(index)
+            self.write(str(index))
         elif str(path) == "contact-us":
 ##############################################################
           # here, we start the script to make stats and choose
@@ -24,7 +24,7 @@ class MainHandler(tornado.web.RequestHandler):
                 test_conversion.Start()                      #
 ##############################################################
             contact_us = '<!DOCTYPE HTML><html><body><h1>Contact Us</h1></body></html>'
-            self.write(str(html))
+            self.write(str(contact_us))
         else:
             self.set_status(404)
 def make_app():
