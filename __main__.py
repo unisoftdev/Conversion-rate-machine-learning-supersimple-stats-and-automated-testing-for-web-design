@@ -12,10 +12,10 @@ class MainHandler(tornado.web.RequestHandler):
         referer = self.request.headers.get("Referer")
         path = path.replace("/", "").lower()
         if str(path) == "":
-#############################################################################################
+                                                                     ########################
             # here, we start our script when use the variable  ------------> this variable  #
             index = '<!DOCTYPE HTML><html><body><button style=color:"'+ global_variable.color +';width:100%;height:auto"></button>press me</body></html>'
-#############################################################################################           
+                                                                     ########################           
             self.write(str(index))
         elif str(path) == "contact-us":
 ##############################################################
