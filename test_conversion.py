@@ -1,7 +1,7 @@
 # For a GUI, better performance, more functions, and easiness to use... Check out: www.unisoftdev.tech
 
 '''
-* @ Automated web design conversion rate testing
+* @ Automated website conversion rate testing tool example
 * Created By: Juraj Vysvader
 * Author's profile: https://www.linkedin.com/in/jurajvysvader
                     https://www.linkedin.com/company/unisoftdev 
