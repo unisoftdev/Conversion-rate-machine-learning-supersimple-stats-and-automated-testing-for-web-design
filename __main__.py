@@ -15,7 +15,7 @@ class MainHandler(tornado.web.RequestHandler):
                                                                       #########################
             # here, we start our script when use the variable  ------------> this variable    #
             index = '<!DOCTYPE HTML><html><body><button style=color:"'+ global_variable.color +';width:100%;height:auto"></button>press me</body></html>'
-            global_variable.color = ""                                #                       #
+                                                                      #                       #
                                                                       #########################           
             self.write(str(index))
            ######################################
