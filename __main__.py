@@ -10,7 +10,7 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self, matched_part=None):
         path = self.request.path
         referer = self.request.headers.get("Referer")
-        path = path.replace("/", "").lower()
+        path = path.replace("/", "")
         if str(path) == "":
                                                                       #########################
             # here, we start our script when use the variable  ------------> this variable    #
